@@ -1,0 +1,182 @@
+:root{
+    --couleurPrimaire: #fff;
+    --couleurSeondaire: #333;
+    --cTitreGauche: #000;
+    --cTitreDroite: #fafafa;
+    --cTexteGauche: #222;
+    --cTexteDroite: #eee;
+    --cTexteSecondaire: #444;
+    --cTexteNote: #777;
+    --cNomOrganisation: #e60068;
+}
+
+*{
+    font-family: 'Roboto';
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    flex:1;
+    align-items: center;
+    justify-content:center;
+    background-color: #ddd;
+}
+
+button{
+    cursor: auto;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+h2{
+    margin: 0;
+}
+
+p{
+    display: contents;
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+}
+
+li{
+    font-weight: 500;
+    font-size: 1.6ch !important;
+}
+
+li a{
+    font-size: 1.8ch !important;
+}
+
+a{
+    color: blue !important;
+}
+
+#container{
+    width:210mm;
+    height: 297mm;
+    flex-direction: row;
+}
+
+.colonneGauche{
+    flex:2;
+    flex-direction: column;
+    padding: 2em 1em 2em 3em;
+    background-color: var(--couleurPrimaire);
+}
+
+.colonneGauche *{
+    color: var(--cTexteGauche);
+    font-size: 1.5ch;
+    font-weight: 500;
+}
+
+
+.colonneDroite{
+    flex:1;
+    flex-direction: column;
+    padding: 2em 2em 2em 2em;
+    background-color: var(--couleurSeondaire);
+}
+
+.colonneDroite *{
+    color: var(--cTexteDroite);
+    font-size: 1.65ch;
+    font-weight: 500;
+}
+
+.colonneDroite p{
+    line-height: 2em;
+}
+
+.colonneDroite .rubrique p{
+    font-size: 1.2ch ;
+}
+
+.colonneDroite .rubrique h1{
+    color: var(--cTitreDroite);
+}
+
+.descriptionCV{
+    color: var(--cTexteNote);
+    font-family: 'Lato';
+    margin-top: 0.5em;
+    font-size: 1.4ch;
+}
+
+.fa{
+    margin: 0 0.5em 0 0.5em;
+}
+
+.hint{
+    height: 1em;
+    width: 2em;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #000;
+}
+
+.liste br{
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 20%;
+}
+
+.nomOrganisation{
+    color: var(--cNomOrganisation);
+    font-size: 1.5ch;
+}
+
+.rubrique{
+    font-size: 2.1ch;
+    font-family: 'Roboto';
+    font-weight: 700;
+    padding-top: 1.7em;
+}
+
+.rubrique div{
+    flex-direction: row;
+}
+
+.rubrique .b{
+    font-weight: 600;
+}
+
+.rubrique h1{
+    font-size: 1.6ch;
+    font-weight: 700;
+}
+
+
+.titreCV{
+    font-family: 'Lato';
+    font-size: 2.7ch;
+    font-weight: 500;
+}
+
+.texteSecondaire{
+    color: var(--cTexteSecondaire);
+    font-weight: 500;
+}
+
+.texteNote{
+    color: var(--cTexteNote);
+    font-weight: 500;
+}
+
+
