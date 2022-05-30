@@ -20,7 +20,7 @@
 
             <div class="colonneGauche">
                 <span class="titreCV">Développeur informatique alternant</span> 
-                <span class="descriptionCV">Je suis étudiant en développement informatique, je recherche actuellement une alternance pour un contrat d'apprentissage</span>
+                <span class="descriptionCV">Bonjour, je suis étudiant en développement informatique, je recherche actuellement une alternance pour un contrat d'apprentissage</span>
                 
                 <div class="rubrique">
                     <h1>Compétences</h1>
@@ -177,7 +177,6 @@
             // doc.save("CV-DIALLO-Ousmane-2022.pdf");
 
             var opt = {
-                pagebreak:{mode: 'avoid-all'},
                 width: container.style.width,
                 height: container.style.height,
                 filename:'CV-DIALLO-Ousmane-' + new Date().getFullYear() + '.pdf',
@@ -186,7 +185,6 @@
                 jsPDF:{ unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
-            // New Promise-based usage:
             html2pdf().set(opt).from(container).save();            
         }
 
