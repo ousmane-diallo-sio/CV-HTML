@@ -1,3 +1,3 @@
 # CV-HTML
 
-![Mon CV en HTML](CV-DIALLO-Ousmane-2022.jpg)
+![Mon CV en HTML](CV-DIALLO-Ousmane-2022.png)
