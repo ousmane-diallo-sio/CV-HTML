@@ -1,0 +1,35 @@
+:root{
+    --primaryColor: #fff;
+    --secondaryColor: #333;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+
+    & .resume-wrapper{
+        display: flex;
+        width:210mm;
+        height: 297mm;
+        flex-direction: row;
+        background-color: var(--primaryColor);
+
+        & * {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        & .resume-left {
+            flex: 2.3;
+            background-color: var(--secondaryColor);
+        }
+        & .resume-right {
+            flex: 1;
+            background: greenyellow
+        }
+    }
+}
+
