@@ -1,2 +1,2 @@
-echo reloading chrome...
-osascript reloadChrome.scpt
+echo reloading chrome...;
+osascript reloadChrome.scpt;
