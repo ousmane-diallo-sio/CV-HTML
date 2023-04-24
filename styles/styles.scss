@@ -1,35 +1,66 @@
 :root{
     --primaryColor: #fff;
     --secondaryColor: #333;
+    --trueBlue: #0072C6;
 }
 
-main {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-self: center;
-    align-items: center;
-
-    & .resume-wrapper{
+body {
+    background: #F2F2F2;
+    & * {
+        font-family: Lato;
+        font-weight: 400;
+    }
+    & h1 {
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+    & h2 {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-top: 2rem;
+    }
+    & i {
+        font-size: 1.2rem !important;
+    }
+    & h1, h2, i {
+        color: var(--trueBlue);
+    }
+    & main {
         display: flex;
-        width:210mm;
-        height: 297mm;
-        flex-direction: row;
-        background-color: var(--primaryColor);
-
-        & * {
-            display: flex;
-            flex-direction: column;
-        }
+        width: 100%;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
     
-        & .resume-left {
-            flex: 2.3;
-            background-color: var(--primaryColor);
-        }
-        & .resume-right {
-            flex: 1;
-            background: greenyellow;
-            border-left: solid 1px var(--secondaryColor);
+        & .resume-wrapper{
+            display: flex;
+            flex-direction: row;
+            width:210mm;
+            height: 297mm;
+            padding: 10mm;
+            background: var(--primaryColor);
+        
+            & .resume-left {
+                flex: 2.1;
+            }
+            & .resume-right {
+                flex: 1;
+                border-left: solid 2px var(--secondaryColor);
+                padding-left: 5mm;
+                & span {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding: 1.5mm 0;
+                    & i {
+                        margin-right: 1rem;
+                    }
+                }
+                & p, li {
+                    color: var(--secondaryColor);
+                }
+            }
         }
     }
 }

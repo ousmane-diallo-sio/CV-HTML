@@ -1,32 +1,64 @@
 :root {
   --primaryColor: #fff;
   --secondaryColor: #333;
+  --trueBlue: #0072C6;
 }
 
-main {
+body {
+  background: #F2F2F2;
+}
+body * {
+  font-family: Lato;
+  font-weight: 400;
+}
+body h1 {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+body h2 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+body i {
+  font-size: 1.2rem !important;
+}
+body h1, body h2, body i {
+  color: var(--trueBlue);
+}
+body main {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-self: center;
   align-items: center;
 }
-main .resume-wrapper {
+body main .resume-wrapper {
   display: flex;
+  flex-direction: row;
   width: 210mm;
   height: 297mm;
-  flex-direction: row;
-  background-color: var(--primaryColor);
+  padding: 10mm;
+  background: var(--primaryColor);
 }
-main .resume-wrapper * {
-  display: flex;
-  flex-direction: column;
+body main .resume-wrapper .resume-left {
+  flex: 2.1;
 }
-main .resume-wrapper .resume-left {
-  flex: 2.3;
-  background-color: var(--primaryColor);
-}
-main .resume-wrapper .resume-right {
+body main .resume-wrapper .resume-right {
   flex: 1;
-  background: greenyellow;
-  border-left: solid 1px var(--secondaryColor);
+  border-left: solid 2px var(--secondaryColor);
+  padding-left: 5mm;
+}
+body main .resume-wrapper .resume-right span {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5mm 0;
+}
+body main .resume-wrapper .resume-right span i {
+  margin-right: 1rem;
+}
+body main .resume-wrapper .resume-right p, body main .resume-wrapper .resume-right li {
+  color: var(--secondaryColor);
 }/*# sourceMappingURL=styles.css.map */

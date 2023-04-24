@@ -20,6 +20,9 @@ if ! echo `open -a "Google Chrome" http://localhost:80` > /dev/null; then
 else
   watchman watch .;
   watchman -- trigger . reload-chrome '*' -- ./reloadChrome.sh;
+  echo "Watch list: \n";
+  watchman watch-list;
 fi
 
 caddy file-server --browse --listen :80;
+watchman trigger-del . reload-chrome > /dev/null;
