@@ -24,11 +24,12 @@ main {
     
         & .resume-left {
             flex: 2.3;
-            background-color: var(--secondaryColor);
+            background-color: var(--primaryColor);
         }
         & .resume-right {
             flex: 1;
-            background: greenyellow
+            background: greenyellow;
+            border-left: solid 1px var(--secondaryColor);
         }
     }
 }

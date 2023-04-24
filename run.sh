@@ -1,4 +1,5 @@
 # This script runs the project and uses watchman to reload Chrome when a file changes.
+# It also uses a VScode extension to compile the sass files to css.
 
 echo "\nThis script only works on MacOS. Run the project manually if you are using Linux or Windows.";
 

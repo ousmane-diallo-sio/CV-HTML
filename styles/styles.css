@@ -23,9 +23,10 @@ main .resume-wrapper * {
 }
 main .resume-wrapper .resume-left {
   flex: 2.3;
-  background-color: var(--secondaryColor);
+  background-color: var(--primaryColor);
 }
 main .resume-wrapper .resume-right {
   flex: 1;
   background: greenyellow;
+  border-left: solid 1px var(--secondaryColor);
 }/*# sourceMappingURL=styles.css.map */
