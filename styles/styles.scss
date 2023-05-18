@@ -2,6 +2,7 @@
     --primaryColor: #fff;
     --secondaryColor: #333;
     --trueBlue: #0072C6;
+    --gray: #808080;
 }
 
 body {
@@ -12,18 +13,35 @@ body {
     }
     & h1 {
         font-weight: 900;
-        font-size: 1.5rem;
+        font-size: 1.5em;
+        margin: .2rem 0;
     }
     & h2 {
         font-weight: 700;
-        font-size: 1.1rem;
-        margin-top: 2rem;
+        font-size: 1rem;
+        margin: 0 0 .5rem 0;
+        padding-bottom: .5rem;
+        border: solid 0 var(--trueBlue);
+        border-bottom-width: 2px;
+    }
+    & h3 {
+        margin: 0 0 .5rem 0;
+        border: solid 0 var(--trueBlue);
+        border-left-width: 3px;
+        padding-left: .5rem;
+    }
+    & h4 {
+        margin: .3rem 0;
     }
     & i {
         font-size: 1.2rem !important;
     }
-    & h1, h2, i {
+    & h1, h2, h3 {
         color: var(--trueBlue);
+    }
+    & a {
+        color: var(--trueBlue);
+        font-weight: 700;    
     }
     & main {
         display: flex;
@@ -42,11 +60,51 @@ body {
         
             & .resume-left {
                 flex: 2.1;
+                > section {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    padding: 1rem 0;
+                    &:nth-of-type(1) {
+                        padding-top: 0;
+                        margin-bottom: .5rem;
+                    }
+                    & span {
+                        font-size: .8rem;
+                        color: var(--gray);
+                    }
+                    & h3 {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+                    & h4 {
+                        font-size: 1rem;
+                        font-weight: 700;
+                    }
+                    & p {
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                    }
+                    & ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        & li {
+                            font-size: 0.8rem;
+                            font-weight: 400;
+                            padding: 0.5rem 0;
+                            & i {
+                                margin-right: 0.5rem;
+                            }
+                        }
+                    }
+                }
             }
             & .resume-right {
                 flex: 1;
                 border-left: solid 2px var(--secondaryColor);
-                padding-left: 5mm;
+                padding: 0 5mm;
                 & span {
                     display: flex;
                     flex-direction: row;
