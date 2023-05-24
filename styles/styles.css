@@ -41,12 +41,29 @@ body i {
 body h1, body h2, body h3 {
   color: var(--trueBlue);
 }
+body nav {
+  --icon-size: 1rem;
+  position: relative;
+  padding-left: var(--icon-size);
+  margin-top: 0.5rem;
+  font-weight: 700;
+  color: var(--trueBlue);
+}
+body nav::before {
+  content: "\f276";
+  position: absolute;
+  left: 0;
+  display: block;
+  font-family: "Font Awesome 5 Free";
+  font-size: var(--icon-size);
+  font-weight: 900;
+}
 body a {
   position: relative;
   display: flex;
   align-items: center;
-  color: var(--trueBlue);
   font-weight: 700;
+  color: black;
   text-decoration: none;
 }
 body a::before {
@@ -54,7 +71,7 @@ body a::before {
   display: block;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: inherit;
+  color: var(--trueBlue);
   margin-right: 0.2rem;
   font-size: inherit;
 }
@@ -117,7 +134,6 @@ body main .resume-wrapper .resume-left > section ul {
   margin: 0;
 }
 body main .resume-wrapper .resume-left > section ul li {
-  font-size: 0.8rem;
   font-weight: 400;
   padding: 0.1rem 0;
 }
