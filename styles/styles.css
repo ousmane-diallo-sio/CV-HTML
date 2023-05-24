@@ -49,9 +49,18 @@ body nav {
   font-weight: 700;
   color: var(--trueBlue);
 }
+body nav > :nth-child(1) {
+  padding-top: 0.25rem;
+}
 body nav::before {
+  content: "Liens utiles : ";
+  display: block;
+  font-family: inherit;
+}
+body nav::after {
   content: "\f276";
   position: absolute;
+  top: 0;
   left: 0;
   display: block;
   font-family: "Font Awesome 5 Free";
@@ -108,11 +117,14 @@ body main .resume-wrapper .resume-left > section {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 body main .resume-wrapper .resume-left > section:nth-of-type(1) {
   padding-top: 0;
   margin-bottom: 0.5rem;
+}
+body main .resume-wrapper .resume-left > section:nth-of-type(1) > span {
+  color: black;
 }
 body main .resume-wrapper .resume-left > section span {
   font-size: 0.85rem;
@@ -136,6 +148,7 @@ body main .resume-wrapper .resume-left > section ul {
 body main .resume-wrapper .resume-left > section ul li {
   font-weight: 400;
   padding: 0.1rem 0;
+  font-size: 0.9rem;
 }
 body main .resume-wrapper .resume-left > .heading > div {
   display: flex;

@@ -47,9 +47,18 @@ body {
         margin-top: .5rem;
         font-weight: 700;
         color: var(--trueBlue);
+        > :nth-child(1) {
+            padding-top: .25rem;
+        }
         &::before {
+            content: 'Liens utiles : ';
+            display: block;
+            font-family: inherit;
+        }
+        &::after {
             content: '\f276';
             position: absolute;
+            top: 0;
             left: 0;
             display: block;
             font-family: 'Font Awesome 5 Free';
@@ -106,10 +115,13 @@ body {
                     flex-direction: column;
                     justify-content: center;
                     align-items: flex-start;
-                    padding: 1rem 0;
+                    padding: .8rem 0;
                     &:nth-of-type(1) {
                         padding-top: 0;
                         margin-bottom: .5rem;
+                        > span {
+                            color: black;
+                        }
                     }
                     & span {
                         font-size: .85rem;
@@ -132,6 +144,7 @@ body {
                         & li {
                             font-weight: 400;
                             padding: .1rem 0;
+                            font-size: .9rem;
                         }
                     }
                 }
