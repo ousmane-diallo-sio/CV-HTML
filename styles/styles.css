@@ -45,7 +45,7 @@ body nav {
   --icon-size: 1rem;
   position: relative;
   padding-left: var(--icon-size);
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--trueBlue);
@@ -113,6 +113,22 @@ body small::before {
   content: "Stack technique :";
   margin-right: 0.2rem;
 }
+body [skillId]::before {
+  content: attr(skillId);
+  display: flex;
+  width: 0.4rem;
+  height: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  font-size: 0.65rem;
+  font-weight: bold;
+  margin: 0 0.1rem;
+  border: dotted 2px var(--trueBlue);
+  color: var(--trueBlue);
+  border-radius: 100%;
+  padding: 0.3rem;
+}
 body main {
   display: flex;
   width: 100%;
@@ -128,9 +144,14 @@ body main .resume-wrapper {
   padding: 10mm;
   background: var(--primaryColor);
 }
+body main .resume-wrapper .resume-left, body main .resume-wrapper .resume-right {
+  display: flex;
+  flex-direction: column;
+}
 body main .resume-wrapper .resume-left {
-  flex: 2.5;
-  margin-right: 1rem;
+  flex: 2;
+  margin-right: 0.3rem;
+  overflow: hidden;
 }
 body main .resume-wrapper .resume-left > section {
   display: flex;
@@ -142,21 +163,23 @@ body main .resume-wrapper .resume-left > section {
 }
 body main .resume-wrapper .resume-left > section:nth-of-type(1) {
   padding-top: 0;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 body main .resume-wrapper .resume-left > section:nth-of-type(1) > span {
   color: black;
+  font-size: 0.9rem;
 }
 body main .resume-wrapper .resume-left > section > div, body main .resume-wrapper .resume-left > section section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 body main .resume-wrapper .resume-left > section > div:last-of-type, body main .resume-wrapper .resume-left > section section:last-of-type {
   margin-bottom: 0;
 }
 body main .resume-wrapper .resume-left > section > section {
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
   margin-bottom: 0;
 }
 body main .resume-wrapper .resume-left > section:not(:nth-of-type(1), :last-of-type), body main .resume-wrapper .resume-left > section > section:not(:last-of-type) {
@@ -174,13 +197,17 @@ body main .resume-wrapper .resume-left > section h3 {
   font-weight: 700;
 }
 body main .resume-wrapper .resume-left > section h4 {
+  display: flex;
   font-size: 1rem;
   font-weight: 700;
+}
+body main .resume-wrapper .resume-left > section h4 [skillId]:first-of-type {
+  margin-left: 0.2rem;
 }
 body main .resume-wrapper .resume-left > section p {
   font-size: 0.8rem;
   font-weight: 400;
-  margin: 0.2rem 0 0.5rem 0;
+  margin: 0.2rem 0.2rem 0.5rem 0;
 }
 body main .resume-wrapper .resume-left > section ul {
   margin: 0;
@@ -192,19 +219,88 @@ body main .resume-wrapper .resume-left > section ul li {
 }
 body main .resume-wrapper .resume-right {
   flex: 1;
+  justify-content: space-between;
   border-left: solid 2px var(--secondaryColor);
-  padding: 0 1rem;
+  padding: 0 0 0 0.5rem;
+  overflow: hidden;
 }
-body main .resume-wrapper .resume-right span {
+body main .resume-wrapper .resume-right > section {
+  display: flex;
+  flex-direction: column;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(1) {
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(1) span {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: 1.5mm 0;
+  padding: 0.2rem 0;
+  font-weight: 700;
 }
-body main .resume-wrapper .resume-right span i {
-  margin-right: 1rem;
+body main .resume-wrapper .resume-right > section:nth-of-type(1) span i {
+  margin-right: 0.5rem;
+  color: var(--trueBlue);
 }
-body main .resume-wrapper .resume-right p, body main .resume-wrapper .resume-right li {
-  color: var(--secondaryColor);
+body main .resume-wrapper .resume-right > section:nth-of-type(2) {
+  justify-content: space-between;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:not(body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:last-of-type) {
+  margin-bottom: 0.7rem;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:not(body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type) ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:not(body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type) ul li {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  margin: 0.15rem 0.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: var(--trueBlue);
+  border-radius: 10mm;
+  color: white;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type {
+  margin-bottom: 0.3rem;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type ul > li {
+  display: flex;
+  margin: 0.2rem 0;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(2) > div:first-of-type ul > li::before {
+  margin-right: 0.2rem;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(3) {
+  justify-content: flex-end;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(3) img {
+  width: auto;
+  height: 6rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(3) a {
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(3) a::before {
+  display: none;
+}
+body main .resume-wrapper .resume-right > section:nth-of-type(3) a::after {
+  margin-left: 0;
+}
+body main .resume-wrapper .resume-right > section h3 {
+  color: black;
+  font-weight: 700;
+  border-color: var(--trueBlue);
 }/*# sourceMappingURL=styles.css.map */

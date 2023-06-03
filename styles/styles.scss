@@ -44,7 +44,7 @@ body {
         --icon-size: 1rem;
         position: relative;
         padding-left: var(--icon-size);
-        margin-top: .5rem;
+        margin-top: .3rem;
         font-weight: 700;
         font-size: .9rem;
         color: var(--trueBlue);
@@ -112,6 +112,24 @@ body {
             margin-right: .2rem;
         }
     }
+    & [skillId] {
+        &::before {
+            content: attr(skillId);
+            display: flex;
+            width: .4rem;
+            height: .4rem;
+            align-items: center;
+            justify-content: center;
+            align-self: flex-start;
+            font-size: .65rem;
+            font-weight: bold;
+            margin: 0 .1rem;
+            border: dotted 2px var(--trueBlue);
+            color: var(--trueBlue);
+            border-radius: 100%;
+            padding: .3rem;
+        }
+    }
     & main {
         display: flex;
         width: 100%;
@@ -126,10 +144,14 @@ body {
             height: 297mm;
             padding: 10mm;
             background: var(--primaryColor);
-        
+            & .resume-left, .resume-right {
+                display: flex;
+                flex-direction: column;
+            }
             & .resume-left {
-                flex: 2.5;
-                margin-right: 1rem;
+                flex: 2;
+                margin-right: .3rem;
+                overflow: hidden;
                 > section {
                     display: flex;
                     width: 95%;
@@ -139,21 +161,23 @@ body {
                     padding: .8rem 0;
                     &:nth-of-type(1) {
                         padding-top: 0;
-                        margin-bottom: .5rem;
+                        padding-bottom: 0;
+                        margin-bottom: 0;
                         > span {
                             color: black;
+                            font-size: .9rem;
                         }
                     }
                     > div, section {
                         display: flex;
                         flex-direction: column;
-                        margin-bottom: .8rem;
+                        margin-bottom: .4rem;
                         &:last-of-type {
                             margin-bottom: 0;
                         }
                     }
                     > section {
-                        padding: .4rem 0;
+                        padding: .2rem 0;
                         margin-bottom: 0;
                     }
                     &:not(:nth-of-type(1), :last-of-type), > section:not(:last-of-type) {
@@ -171,13 +195,19 @@ body {
                         font-weight: 700;
                     }
                     & h4 {
+                        display: flex;
                         font-size: 1rem;
                         font-weight: 700;
+                        & [skillId] {
+                            &:first-of-type {
+                                margin-left: .2rem;
+                            }
+                        }
                     }
                     & p {
                         font-size: 0.8rem;
                         font-weight: 400;
-                        margin: .2rem 0 .5rem 0;
+                        margin: .2rem .2rem .5rem 0;
                     }
                     & ul {
                         margin: 0;
@@ -191,20 +221,93 @@ body {
             }
             & .resume-right {
                 flex: 1;
+                justify-content: space-between;
                 border-left: solid 2px var(--secondaryColor);
-                padding: 0 1rem;
-                & span {
+                padding: 0 0 0 .5rem;
+                overflow: hidden;
+                > section {
                     display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    align-items: center;
-                    padding: 1.5mm 0;
-                    & i {
-                        margin-right: 1rem;
+                    flex-direction: column;
+                    &:nth-of-type(1) {
+                        justify-content: flex-start;
+                        margin-bottom: .5rem;
+                        & span {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding: .2rem 0;
+                            font-weight: 700;
+                            & i {
+                                margin-right: .5rem;
+                                color: var(--trueBlue);
+                            }
+                        }
                     }
-                }
-                & p, li {
-                    color: var(--secondaryColor);
+                    &:nth-of-type(2) {
+                        justify-content: space-between;
+
+                        > div {
+                            &:not(&:last-of-type) {
+                                margin-bottom: .7rem;
+                            }
+                            &:not(&:first-of-type) {
+                                & ul {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    margin: 0;
+                                    padding: 0;
+                                    & li {
+                                        display: flex;
+                                        padding: .25rem .5rem;
+                                        margin: .15rem .2rem;
+                                        font-weight: 700;
+                                        font-size: .9rem;
+                                        background: var(--trueBlue);
+                                        border-radius: 10mm;
+                                        color: white;
+                                    }
+                                }
+                            }
+                            &:first-of-type {
+                                margin-bottom: .3rem;
+                                & ul {
+                                    padding: 0;
+                                    margin-bottom: 0;
+                                    > li {
+                                        display: flex;
+                                        margin: .2rem 0;
+                                        &::before {
+                                            margin-right: .2rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        justify-content: flex-end;
+                        & img {
+                            width: auto;
+                            height: 6rem;
+                            object-fit: contain;
+                        }
+                        & a {
+                            font-size: .85rem;
+                            margin-top: .3rem;
+                            &::before {
+                                display: none;
+                            }
+                            &::after {
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                    & h3 {
+                        color: black;
+                        font-weight: 700;
+                        border-color: var(--trueBlue);
+                    }
                 }
             }
         }
