@@ -137,13 +137,14 @@ body {
         align-self: center;
         align-items: center;
     
-        & .resume-wrapper{
+        #resume-wrapper{
             display: flex;
             flex-direction: row;
             width:210mm;
             height: 297mm;
             padding: 10mm;
             background: var(--primaryColor);
+            overflow: hidden;
             & .resume-left, .resume-right {
                 display: flex;
                 flex-direction: column;

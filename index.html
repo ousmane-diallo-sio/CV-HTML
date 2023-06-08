@@ -18,14 +18,14 @@
                 Enregistrer fichier PDF
             </button>
             <br>
-            <div class="resume-wrapper">
+            <div id="resume-wrapper">
                 <div class="resume-left">
                     <section>
                         <h1>Ousmane Diallo</h1>
                         <h2>Développeur en alternance</h2>
                         <span>
-                            Actuellement Développeur Full Stack en alternance, je recherche un contrat d'apprentissage pour la rentrée 2023 
-                            afin de me spécialiser dans le développement d'applications Android. 
+                            Actuellement Développeur Full Stack en alternance, je recherche un contrat d'apprentissage pour la rentrée de Septembre 2023 <br>
+                            <span>(Rythme de 3 semaines en entreprise et 1 semaine en formation)</span>. 
                             <br><br>
                             Je suis intéressé par les postes de développeur Kotlin/Java, 
                             mais je suis également ouvert à d'autres technologies telles que NodeJS et Flutter. 
@@ -129,7 +129,7 @@
                                 Instameme Editor est une application qui permet d'effectuer des montages photos à partir de templates pré-remplis.
                                 Vous en trouverez quelques exemples d'utilisation sur Instagram.
                             </p>
-                            <small>Android (Java)</small>
+                            <small>Android (Java), HTML, CSS, JavaScript</small>
                             <nav>
                                 <ul>
                                     <li>
@@ -169,10 +169,9 @@
                             <ul>
                                 <li>Android</li>
                                 <li>NodeJS</li>
-                                <li>Cross-plateforme</li>
+                                <li>Flutter</li>
                             </ul>
                         </div>
-                        <!-- TODO remplacer les titres -->
                         <div>
                             <h3>Langages les plus utilisés</h3>
                             <ul>
@@ -220,7 +219,7 @@
                     <section>
                         <img src="assets/cv-html.svg.png" alt="" />
                         <b>
-                            Scannez ce QR Code pour récupérer le code source de mon CV 
+                            Scannez ce QR Code pour récupérer le code source de ce CV 
                         </b>
                         <a target="_blank" rel="noopener noreferrer" href="//github.com/ousmane-diallo-sio/CV-HTML"
                         ></a>
@@ -234,26 +233,27 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
         integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" 
         crossorigin="anonymous" 
-        referrerpolicy="no-referrer">
-    </script>
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function savePDF(){
-            const container = document.getElementById('container');
+            const resumeWrapper = document.getElementById('resume-wrapper');
 
             const opt = {
-                width: container.style.width,
-                height: container.style.height,
+                width: resumeWrapper.clientWidth,
+                height: resumeWrapper.clientHeight,
                 filename:'CV-DIALLO-Ousmane-' + new Date().getFullYear() + '.pdf',
                 image:{ type: 'png', quality: 1 },
                 html2canvas:{ scale: 2 },
                 jsPDF:{ unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
+            }
 
-            html2pdf().set(opt).from(container).save();            
+            html2pdf().set(opt).from(resumeWrapper).save()     
         }
 
-        const btn = document.getElementById('btn');
-        btn.addEventListener('click', savePDF, false);
+        const btn = document.getElementById('btn')
+        btn.addEventListener('click', savePDF, false)
 
     </script>
 
