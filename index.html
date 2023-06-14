@@ -5,13 +5,11 @@
     
     <head>
         <link rel="stylesheet" href="styles/styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
 
-    <body>
+    <body id="body">
         
         <main>
             <button id="btn" style="width: 30%; background-color: #000d; padding: 1.5em; color: azure;">
@@ -24,8 +22,8 @@
                         <h1>Ousmane Diallo</h1>
                         <h2>Développeur en alternance</h2>
                         <span>
-                            Actuellement Développeur Full Stack en alternance, je recherche un contrat d'apprentissage pour la rentrée de Septembre 2023 <br>
-                            <span>(Rythme de 3 semaines en entreprise et 1 semaine en formation)</span>. 
+                            Actuellement Développeur Full Stack en alternance, je recherche un contrat d'apprentissage pour la rentrée de Septembre 2023.<br>
+                            <span>(Rythme de 3 semaines en entreprise et 1 semaine en formation) </span>
                             <br><br>
                             Je suis intéressé par les postes de développeur Kotlin/Java, 
                             mais je suis également ouvert à d'autres technologies telles que NodeJS et Flutter. 
@@ -217,7 +215,7 @@
                         </div>
                     </section>
                     <section>
-                        <img src="assets/cv-html.svg.png" alt="" />
+                        <img width="96" height="96" src="assets/cv-html.svg.png" alt="" >
                         <b>
                             Scannez ce QR Code pour récupérer le code source de ce CV 
                         </b>
@@ -229,27 +227,31 @@
             
         </main>
 
-    <script 
-        src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" 
-        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" 
-        crossorigin="anonymous" 
-        referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        function savePDF(){
-            const resumeWrapper = document.getElementById('resume-wrapper');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        
+        // function loadScripts() {
+        //     html2pdfScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js'
+        //     html2pdfScript.integrity = 'sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=='
+        //     html2pdfScript.crossOrigin = 'anonymous'
+        //     html2pdfScript.referrerPolicy = 'no-referrer'
+    
+        //     document.body.appendChild(html2pdfScript)
+        // }
+
+        function savePDF(){
+            const resumeWrapper = document.getElementById('resume-wrapper')
             const opt = {
-                width: resumeWrapper.clientWidth,
-                height: resumeWrapper.clientHeight,
+                width: resumeWrapper.style.width,
+                height: resumeWrapper.style.height,
                 filename:'CV-DIALLO-Ousmane-' + new Date().getFullYear() + '.pdf',
                 image:{ type: 'png', quality: 1 },
                 html2canvas:{ scale: 2 },
                 jsPDF:{ unit: 'mm', format: 'a4', orientation: 'portrait' }
             }
 
-            html2pdf().set(opt).from(resumeWrapper).save()     
+            html2pdf().set(opt).from(resumeWrapper).save()  
         }
 
         const btn = document.getElementById('btn')
