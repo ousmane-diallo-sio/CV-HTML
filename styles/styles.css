@@ -5,23 +5,23 @@
   --gray: #808080;
 }
 
-body {
+ body {
   background: #F2F2F2;
 }
 
-body * {
+ * {
   font-family: Lato;
   font-weight: 400;
   font-size: 1rem;
 }
 
-body h1 {
+ h1 {
   font-weight: 900;
   font-size: 1.5em;
   margin: .2rem 0;
 }
 
-body h2 {
+ h2 {
   font-weight: 700;
   font-size: 1rem;
   margin: 0 0 .5rem 0;
@@ -30,30 +30,30 @@ body h2 {
   border-bottom-width: 2px;
 }
 
-body h3 {
-  margin: 0 0 .5rem 0;
+ h3 {
+  margin: 0 0 .3rem 0;
   border: solid 0 var(--trueBlue);
   border-left-width: 3px;
   padding-left: .5rem;
 }
 
-body h4,
-body b,
-body span {
+ h4,
+ b,
+ span {
   margin: .1rem 0;
 }
 
-body i {
+ i {
   font-size: 1.2rem !important;
 }
 
-body h1,
-body h2,
-body h3 {
+ h1,
+ h2,
+ h3 {
   color: var(--trueBlue);
 }
 
-body nav {
+ nav {
   --icon-size: 1rem;
   position: relative;
   padding-left: var(--icon-size);
@@ -63,18 +63,18 @@ body nav {
   color: var(--trueBlue);
 }
 
-body nav > :nth-child(1) {
+ nav > :nth-child(1) {
   padding-top: .25rem;
 }
 
-body nav::before {
+ nav::before {
   content: 'Liens utiles : ';
   display: block;
   font-family: inherit;
   margin-left: .4rem;
 }
 
-body nav::after {
+ nav::after {
   content: '\f6ff';
   position: absolute;
   top: 0;
@@ -85,7 +85,7 @@ body nav::after {
   font-weight: 900;
 }
 
-body a {
+ a {
   display: flex;
   width: fit-content;
   align-items: center;
@@ -95,7 +95,7 @@ body a {
   text-decoration: none;
 }
 
-body a::before {
+ a::before {
   content: '\f35d';
   display: block;
   font-family: 'Font Awesome 5 Free';
@@ -105,7 +105,7 @@ body a::before {
   font-size: inherit;
 }
 
-body a::after {
+ a::after {
   content: "(" attr(href) ")";
   display: block;
   margin-left: .4rem;
@@ -116,25 +116,25 @@ body a::after {
   border-bottom: solid 1px var(--gray);
 }
 
-body b {
+ b {
   font-weight: 700;
   color: black;
 }
 
-body small {
+ small {
   display: flex;
   font-size: .8rem;
   color: var(--trueBlue);
   margin: .1rem 0 .5rem 0;
 }
 
-body small::before {
+ small::before {
   display: block;
   content: 'Stack technique :';
   margin-right: .2rem;
 }
 
-body [skillId]::before {
+ [skillId]::before {
   content: attr(skillId);
   display: flex;
   width: .4rem;
@@ -151,7 +151,7 @@ body [skillId]::before {
   padding: .3rem;
 }
 
-body main {
+ main {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -159,29 +159,34 @@ body main {
   align-items: center;
 }
 
-body #resume-wrapper {
+ #resume-wrapper {
   display: flex;
   flex-direction: row;
-  width: 210mm;
-  height: 297mm;
-  padding: 10mm;
+  width: 205mm;
+  height: 296mm;
   background: var(--primaryColor);
   overflow: hidden;
 }
 
-body .resume-left,
-body .resume-right {
+#resume-wrapper > .resume-left, #resume-wrapper > .resume-right {
+  margin-top: 5mm;
+  margin-bottom: 5mm;
+}
+
+ .resume-left,
+ .resume-right {
   display: flex;
   flex-direction: column;
 }
 
-body .resume-left {
+ .resume-left {
   flex: 2;
   margin-right: .3rem;
+  margin-left: 5mm;
   overflow: hidden;
 }
 
-body .resume-left > section {
+ .resume-left > section {
   display: flex;
   width: 95%;
   flex-direction: column;
@@ -190,120 +195,131 @@ body .resume-left > section {
   padding: .8rem 0;
 }
 
-body .resume-left > section:nth-of-type(1) > span {
+.resume-left > section:nth-of-type(1) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ .resume-left > section:nth-of-type(1) > span {
   color: black;
   font-size: .9rem;
 }
 
-body .resume-left > section > div,
-body .resume-left > section > section {
+.resume-left > section:nth-of-type(1) > span:nth-of-type(2) {
+  margin-top: 5px;
+}
+
+ .resume-left > section > div,
+ .resume-left > section > section {
   display: flex;
   flex-direction: column;
   margin-bottom: .4rem;
 }
 
-body .resume-left > section > div:last-of-type {
+ .resume-left > section > div:last-of-type {
   margin-bottom: 0;
 }
 
-body .resume-left > section > section {
+ .resume-left > section > section {
   padding: .2rem 0;
   margin-bottom: 0;
 }
 
-body .resume-left > section:not(:nth-of-type(1)):not(:last-of-type),
-body .resume-left > section > section:not(:last-of-type) {
+ .resume-left > section:not(:nth-of-type(1)):not(:last-of-type),
+ .resume-left > section > section:not(:last-of-type) {
   border-bottom: dashed 1px var(--gray);
 }
 
-body .resume-left > section > *:not(h3) {
+ .resume-left > section > *:not(h3) {
   margin-left: 1rem;
 }
 
-body .resume-left > section span {
+ .resume-left > section span {
   font-size: .85rem;
   color: var(--gray);
 }
 
-body .resume-left > section h3 {
+ .resume-left > section h3 {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-body .resume-left > section h4 {
+ .resume-left > section h4 {
   display: flex;
   font-size: 1rem;
   font-weight: 700;
 }
 
-body .resume-left > section h4 [skillId]:first-of-type {
+ .resume-left > section h4 [skillId]:first-of-type {
   margin-left: .2rem;
 }
 
-body .resume-left > section p {
+ .resume-left > section p {
   font-size: 0.8rem;
   font-weight: 400;
   margin: .2rem .2rem .5rem 0;
 }
 
-body .resume-left > section ul {
+ .resume-left > section ul {
   margin: 0;
+  padding-left: 1.5rem;
 }
 
-body .resume-left > section ul li {
+ .resume-left > section ul li {
   font-weight: 400;
   padding: .1rem 0;
   font-size: .9rem;
 }
 
-body .resume-right {
+ .resume-right {
   flex: 1;
   justify-content: space-between;
   border-left: solid 2px var(--secondaryColor);
   padding: 0 0 0 .5rem;
+  margin-right: 5mm;
   overflow: hidden;
 }
 
-body .resume-right > section {
+ .resume-right > section {
   display: flex;
   flex-direction: column;
 }
 
-body .resume-right > section:nth-of-type(1) {
+ .resume-right > section:nth-of-type(1) {
   justify-content: flex-start;
-  margin-bottom: .5rem;
 }
 
-body .resume-right > section:nth-of-type(1) span {
+ .resume-right > section:nth-of-type(1) span {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding: .2rem 0;
   font-weight: 700;
+  font-size: .95rem;
 }
 
-body .resume-right > section:nth-of-type(1) span i {
-  margin-right: .5rem;
+ .resume-right > section:nth-of-type(1) span i {
+  margin-right: .3rem;
   color: var(--trueBlue);
 }
 
-body .resume-right > section:nth-of-type(2) {
+ .resume-right > section:nth-of-type(2) {
   justify-content: space-between;
 }
 
-body .resume-right > section:nth-of-type(2) > div:not(:last-of-type) {
-  margin-bottom: .7rem;
+ .resume-right > section:nth-of-type(2) > div:not(:last-of-type) {
+  margin-bottom: .5rem;
 }
 
-body .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul {
+ .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
 
-body .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul li {
+ .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul li {
   display: flex;
   padding: .25rem .5rem;
   margin: .15rem .2rem;
@@ -314,45 +330,57 @@ body .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul li {
   color: white;
 }
 
-body .resume-right > section:nth-of-type(2) > div:first-of-type {
+ .resume-right > section:nth-of-type(2) > div:first-of-type {
   margin-bottom: .3rem;
 }
 
-body .resume-right > section:nth-of-type(2) > div:first-of-type ul {
+ .resume-right > section:nth-of-type(2) > div:first-of-type ul {
   padding: 0;
   margin-bottom: 0;
 }
 
-body .resume-right > section:nth-of-type(2) > div:first-of-type ul li {
+ .resume-right > section:nth-of-type(2) > div:first-of-type ul li {
   display: flex;
   margin: .2rem 0;
+  font-size: .95rem;
 }
 
-body .resume-right > section:nth-of-type(3) {
+ .resume-right > section:nth-of-type(3) {
   justify-content: flex-end;
 }
 
-body .resume-right > section:nth-of-type(3) img {
+ .resume-right > section:nth-of-type(3) img {
   width: auto;
   height: 6rem;
   object-fit: contain;
 }
 
-body .resume-right > section:nth-of-type(3) a {
-  font-size: .85rem;
+ .resume-right > section:nth-of-type(3) a {
+  font-size: .8rem;
   margin-top: .3rem;
 }
 
-body .resume-right > section:nth-of-type(3) a::before {
+ .resume-right > section:nth-of-type(3) a::before {
   display: none;
 }
 
-body .resume-right > section:nth-of-type(3) a::after {
+ .resume-right > section:nth-of-type(3) a::after {
   margin-left: 0;
 }
 
-body .resume-right > section h3 {
+.resume-right > section:nth-of-type(3) img {
+  width: 95px;
+  height: 95px;
+  max-width: 95px;
+  max-height: 95px;
+  object-fit: contain;
+  margin: auto;
+}
+
+ .resume-right > section h3 {
   color: black;
   font-weight: 700;
   border-color: var(--trueBlue);
+  font-size: .95rem;
+  margin: .3rem 0
 }
