@@ -345,6 +345,10 @@
   font-size: .95rem;
 }
 
+.resume-right > section:nth-of-type(2) > div:first-of-type ul {
+  margin-bottom: 1rem;
+}
+
  .resume-right > section:nth-of-type(3) {
   justify-content: flex-end;
 }
