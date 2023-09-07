@@ -1,3 +1,3 @@
 ### CV-HTML
 
-![Mon CV en HTML](CV-DIALLO-Ousmane-Développeur.png)
+![Mon CV en HTML](CV-DIALLO-Ousmane-Developpeur.png)
