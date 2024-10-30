@@ -15,15 +15,26 @@
   font-size: 1rem;
 }
 
+hr {
+  width: 100%;
+  height: 1px;
+  background: transparent;
+  border: none;
+  border-bottom: dashed 1px var(--gray);
+
+  /* border-bottom: dashed 1px var(--gray); */
+
+}
+
  h1 {
-  font-weight: 900;
-  font-size: 1.5em;
+  font-weight: 700;
+  font-size: 1.4em;
   margin: .2rem 0;
 }
 
  h2 {
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 900;
+  font-size: 1.5rem;
   margin: 0 0 .5rem 0;
   padding-bottom: .5rem;
   border: solid 0 var(--trueBlue);
@@ -184,8 +195,10 @@ h4 {
 
  .resume-left {
   flex: 2;
+  justify-content: space-between;
   margin-right: .3rem;
   margin-left: 5mm;
+  padding-bottom: 3rem;
   overflow: hidden;
 }
 
@@ -216,6 +229,10 @@ h4 {
   padding: .1rem 0;
 }
 
+.resume-left > section > div {
+  row-gap: .2rem;
+}
+
 .resume-left > section > div b {
   font-size: 0.9rem;
   font-weight: 500;
@@ -239,11 +256,6 @@ h4 {
  .resume-left > section > section {
   padding: .2rem 0;
   margin-bottom: 0;
-}
-
- .resume-left > section:not(:nth-of-type(1)):not(:last-of-type),
- .resume-left > section > section:not(:last-of-type) {
-  border-bottom: dashed 1px var(--gray);
 }
 
  .resume-left > section > *:not(h3) {
@@ -289,7 +301,7 @@ h4 {
 
  .resume-right {
   flex: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-left: solid 2px var(--secondaryColor);
   padding: 0 0 0 .5rem;
   margin-right: 5mm;
@@ -302,6 +314,7 @@ h4 {
 }
 
  .resume-right > section:nth-of-type(1) {
+  flex: 1;
   justify-content: flex-start;
 }
 
@@ -310,7 +323,7 @@ h4 {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding: .2rem 0;
+  padding: .4rem 0;
   font-weight: 700;
   font-size: .95rem;
 }
@@ -321,24 +334,26 @@ h4 {
 }
 
  .resume-right > section:nth-of-type(2) {
+  margin-top: 4rem;
+  row-gap: 1.5rem;
   justify-content: space-between;
 }
 
- .resume-right > section:nth-of-type(2) > div:not(:last-of-type) {
+.resume-right > section:nth-of-type(2) > div h3 {
   margin-bottom: .5rem;
 }
 
- .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul {
+ .resume-right > section:nth-of-type(2) > div ul {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
 
- .resume-right > section:nth-of-type(2) > div:not(:first-of-type) ul li {
+ .resume-right > section:nth-of-type(2) > div ul li {
   display: flex;
   padding: .25rem .5rem;
-  margin: .15rem .15rem;
+  margin: .25rem .15rem;
   font-weight: 700;
   font-size: .9rem;
   background: var(--trueBlue);
@@ -346,26 +361,8 @@ h4 {
   color: white;
 }
 
- .resume-right > section:nth-of-type(2) > div:first-of-type {
-  margin-bottom: .3rem;
-}
-
- .resume-right > section:nth-of-type(2) > div:first-of-type ul {
-  padding: 0;
-  margin-bottom: 0;
-}
-
- .resume-right > section:nth-of-type(2) > div:first-of-type ul li {
-  display: flex;
-  margin: .2rem 0;
-  font-size: .95rem;
-}
-
-.resume-right > section:nth-of-type(2) > div:first-of-type ul {
-  margin-bottom: 1rem;
-}
-
  .resume-right > section:nth-of-type(3) {
+  padding: 3rem 0;
   justify-content: flex-end;
 }
 
