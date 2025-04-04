@@ -93,7 +93,7 @@
                             <li>Flexible</li>
                         </ul>
                     </div>
-                    <div>
+                    <div id="languages">
                         <h3>Langues</h3>
                         <ul>
                             <li>Anglais : Courant</li>
@@ -129,7 +129,7 @@
                         • Rythme : 3 semaines en entreprise / 1 semaine en formation
                         <br><br>
 
-                        Bonjour, étant très interéssé par les langages <i>Kotlin/Java</i>,
+                        Bonjour, étant très intéressé par les langages <i>Kotlin/Java</i>,
                         et également ouvert à d'autres technologies telles que <i>React.js</i>, <i>Node.js</i> et
                         <i>Flutter</i>, je suis à la recherche d'une entreprise qui me permettra de mettre en pratique
                         mes compétences et de m'améliorer tout en poursuivant mon BAC +5 en Mobilité et Objets Connectés
@@ -260,10 +260,10 @@
                                     <a target="_blank" rel="noopener noreferrer" class="custom-link"
                                         href="//github.com/ousmane-diallo-sio/TheAudioDBApp">GitHub</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a class="custom-link" target="_blank" rel="noopener noreferrer"
                                         href="https://theaudiodb.com">API</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </section>
@@ -307,19 +307,76 @@
 
     <script>
 
-        function savePDF() {
-            const resumeWrapper = document.getElementById('resume-wrapper')
+        async function getKeywords() {
+            const resumeWrapper = document.getElementById('resume-wrapper');
+            const resumeText = resumeWrapper.innerText;
+            
+            try {
+                const response = await fetch('keywords.json');
+                const keywordsData = await response.json();
+                
+                // Combine all keywords from all categories
+                const allKeywords = [
+                    ...keywordsData.general.fr,
+                    ...keywordsData.general.en,
+                    ...keywordsData.mobile.fr,
+                    ...keywordsData.mobile.en,
+                    ...keywordsData.web.fr,
+                    ...keywordsData.web.en,
+                    ...keywordsData.backend.fr,
+                    ...keywordsData.backend.en
+                ];
+                
+                return `${resumeText}\n\n${allKeywords.join(', ')}`;
+            } catch (error) {
+                console.error('Error loading keywords:', error);
+                return resumeText;
+            }
+        }
+
+        async function savePDF() {
+            const resumeWrapper = document.getElementById('resume-wrapper');
+            const resumeName = "CV-DIALLO-Ousmane-Developpeur";
+
             const opt = {
                 width: resumeWrapper.style.width,
                 height: resumeWrapper.style.height,
-                filename: 'CV-DIALLO-Ousmane-Developpeur.pdf',
+                filename: resumeName,
                 image: { type: 'png', quality: 1 },
-                html2canvas: { scale: 1.6 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                html2canvas: {
+                    scale: 1.6,
+                    useCORS: true,
+                    logging: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                }
             };
 
-            html2pdf().set(opt).from(resumeWrapper).save();
-            alert('Le fichier PDF a été enregistré')
+            try {
+                const keywords = await getKeywords();
+                html2pdf().set(opt).from(resumeWrapper).toPdf().get('pdf').then(pdf => {
+                    console.debug("setting metadata");
+                    pdf.setProperties({
+                        title: resumeName,
+                        subject: resumeName,
+                        author: 'Ousmane DIALLO',
+                        creator: 'Ousmane DIALLO',
+                        keywords,
+                    })
+                    .addMetadata(keywords)
+                    .text(keywords, 10, 10, { renderingMode: "invisible" }, 0)
+                    .save(resumeName + '.pdf');
+                    console.debug("pdf saved");
+                    alert('Le fichier PDF a été enregistré');
+                });
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                alert('Une erreur est survenue lors de la génération du PDF');
+            }
         }
 
         const btn = document.getElementById('btn')
