@@ -106,8 +106,8 @@
                     <div>
                         <h3>Centres d'intérêt</h3>
                         <ul>
-                            <li>Sport</li>
-                            <li>Génie civil</li>
+                            <li>Callisthénie</li>
+                            <li>Football</li>
                         </ul>
                     </div>
                 </section>
@@ -122,18 +122,15 @@
             </div>
             <div class="main-part">
                 <section>
-                    <h2>Développeur en alternance</h2>
+                    <h2>Développeur Android</h2>
                     <p>
-                        • 2 années d'expérience en alternance <br>
-                        • Disponible dès que possible <br>
-                        • Rythme : 3 semaines en entreprise / 1 semaine en formation
+                        Passionné par le développement Android natif, je me spécialise dans la création d'applications
+                        mobiles performantes en utilisant Jetpack Compose et Android Views.
                         <br><br>
-
-                        Bonjour, étant très intéressé par les langages <i>Kotlin/Java</i>,
-                        et également ouvert à d'autres technologies telles que <i>React.js</i>, <i>Node.js</i> et
-                        <i>Flutter</i>, je suis à la recherche d'une entreprise qui me permettra de mettre en pratique
-                        mes compétences et de m'améliorer tout en poursuivant mon BAC +5 en Mobilité et Objets Connectés
-                        à l'ESGI.<br><br>
+                        Fort de deux années d’expérience en alternance, je maîtrise les technologies <i>Kotlin/Java</i>, et je
+                        suis à l’aise avec des stacks modernes comme <i>React.js</i>, <i>Node.js</i> ou <i>Flutter</i>.
+                        Je cherche un environnement technique stimulant où je pourrai continuer à progresser, apprendre et
+                        contribuer à des projets concrets.
 
                         N'hésitez pas à me contacter si vous avez une offre à me proposer. <br><br>
                     </p>
@@ -310,12 +307,11 @@
         async function getKeywords() {
             const resumeWrapper = document.getElementById('resume-wrapper');
             const resumeText = resumeWrapper.innerText;
-            
+
             try {
                 const response = await fetch('keywords.json');
                 const keywordsData = await response.json();
-                
-                // Combine all keywords from all categories
+
                 const allKeywords = [
                     ...keywordsData.general.fr,
                     ...keywordsData.general.en,
@@ -326,7 +322,7 @@
                     ...keywordsData.backend.fr,
                     ...keywordsData.backend.en
                 ];
-                
+
                 return `${resumeText}\n\n${allKeywords.join(', ')}`;
             } catch (error) {
                 console.error('Error loading keywords:', error);
@@ -348,9 +344,9 @@
                     useCORS: true,
                     logging: true
                 },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
                     orientation: 'portrait',
                     compress: true
                 }
@@ -367,9 +363,9 @@
                         creator: 'Ousmane DIALLO',
                         keywords,
                     })
-                    .addMetadata(keywords)
-                    .text(keywords, 10, 10, { renderingMode: "invisible" }, 0)
-                    .save(resumeName + '.pdf');
+                        .addMetadata(keywords)
+                        .text(keywords, 10, 10, { renderingMode: "invisible" }, 0)
+                        .save(resumeName + '.pdf');
                     console.debug("pdf saved");
                     alert('Le fichier PDF a été enregistré');
                 });
